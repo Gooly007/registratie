@@ -28,6 +28,15 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * Authenticate with username instead of email address.
+     */
+
+    public function username()
+    {
+        return 'username';
+    }
+
+    /**
      * Create a new controller instance.
      *
      * @return void
