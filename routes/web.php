@@ -19,10 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/inspinia', 'BezoekersController@index')->name('inspinia');
+Route::get('/bezoekers', 'BezoekersController@index')->name('bezoekers');
 
 Route::get('/minor', 'BezoekersController@minor')->name('minor');

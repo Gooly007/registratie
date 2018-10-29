@@ -1,8 +1,8 @@
 <div class="footer">
     <div class="pull-right">
-        Example text
+        Korps Politie Cura&ccedil;ao
     </div>
     <div>
-        <strong>Copyright</strong> Example Company &copy; 2014-2017
+        <strong>Copyright</strong> X'nD  &copy; 2018-2019
     </div>
 </div>
