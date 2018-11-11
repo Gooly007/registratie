@@ -1,4 +1,4 @@
-@extends('bezoekers.layouts.app')
+@extends('layouts.app')
 
 @section('title', 'Minor page')
 

@@ -1,5 +1,5 @@
 <!-- Extend the layout -->
-@extends('bezoekers.layouts.app')
+@extends('layouts.app')
 
 <!-- Assign page title -->
 @section('title', 'Error')

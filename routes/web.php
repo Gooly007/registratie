@@ -11,14 +11,22 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'BezoekersController@index')->name('home')->middleware('auth');
 
-Route::get('/bezoekers', 'BezoekersController@index')->name('bezoekers');
+Route::get('/home', 'BezoekersController@index')->name('home')->middleware('auth');
 
-Route::get('/minor', 'BezoekersController@minor')->name('minor');
+Route::get('/minor', 'HomeController@minor')->name('minor');
+
+Route::get('/bzregister', 'BezoekersController@create')->name('bzregister')->middleware('auth');
+
+Route::get('/bzinfo/$id', 'BezoekersController@info')->name('bzinfo')->middleware('auth');
+
+Route::post('/bzcreate', 'BezoekersController@store')->name('bzcreate')->middleware('auth');

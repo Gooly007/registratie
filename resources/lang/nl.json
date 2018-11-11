@@ -31,5 +31,21 @@
     "You are receiving this email because we received a password reset request for your account.": "Je ontvangt deze email omdat we een wachtwoord herstel hebben ontvangen voor je account.",
     "You are logged in!": "Je bent ingelogged!",
     "Login Registration": "Login Registratie",
-    "Registration": "Registratie"
+    "Registration": "Registratie",
+    "Firstname": "Voornaam",
+    "Lastname": "Achternaam",
+    "Date": "Datum",
+    "Time In": "Tijd In",
+    "Plate Number": "Kenteken",
+    "Reason for visit": "Reden van bezoek",
+    "Time Out": "Tijd Uit",
+    "Person or Department": "Persoon of Bureau",
+    "Particularities": "Bijzonderheden",
+    "Visitor Registration": "Bezoekers Registratie",
+    "New registration": "Nieuw registratie",
+    "Visitors": "Bezoekers",
+    "Active registrations": "Actieve registraties",
+    "Overview": "Overzicht",
+    "Edit": "Bewerk",
+    "Details": "Gegevens"
   }

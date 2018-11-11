@@ -29,7 +29,7 @@
             @yield('content')
 
             <!-- Footer -->
-            @include('bezoekers.layouts.footer')
+            @include('layouts.footer')
 
         </div>
         <!-- End page wrapper-->
