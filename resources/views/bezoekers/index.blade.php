@@ -46,6 +46,7 @@
                                             <th>{{ __('ID') }}</th>
                                             <th>{{ __('Lastname') }}</th>
                                             <th>{{ __('Firstname') }}</th>
+                                            <th>{{ __('Time In') }}</th>
                                             <th colspan="2">{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
@@ -56,8 +57,9 @@
                                                     <td>{{ $index->sedula }}</td>
                                                     <td>{{ $index->lastname }}</td>
                                                     <td>{{ $index->firstname }}</td>
-                                                    <td class=" col-sm-2 "><a href="{{ route('bzinfo') }}/{{ $index->id }}" class="btn btn-info btn-xs">{{ __('Details') }}</a></td>
-                                                    <td class="col-sm-2"><a href="persedit/{{ $index->id }}" class="btn btn-warning btn-xs">{{ __('Edit') }}</a></td>
+                                                    <td>{{ $index->timein }}</td>
+                                                    <td class=" col-sm-2 "><a href="/home/{{ $index->id }}" class="btn btn-info btn-xs">{{ __('Details') }}</a></td>
+                                                    <td class="col-sm-2"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-xs">{{ __('Edit') }}</a></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

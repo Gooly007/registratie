@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class BezoekersController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     //
     public function index()
     {
@@ -19,11 +25,6 @@ class BezoekersController extends Controller
     public function create()
     {
         return view('bezoekers/create');
-    }
-
-    public function info()
-    {
-        return view('bezoekers/info');
     }
 
     /**
@@ -57,6 +58,18 @@ class BezoekersController extends Controller
 
     }
 
+    public function show($id)
+    {
+        $bezoekers = bezoek_registraties::find($id);
+        return view('bezoekers.view', compact('bezoekers'));
+    }
+
+    public function edit($id)
+    {
+        $bezoekers = bezoek_registraties::find($id);
+        return view('bezoekers.edit', compact('bezoekers'));
+    }
+
     /**
      * Update the specified visitor
      *
@@ -69,4 +82,10 @@ class BezoekersController extends Controller
     {
 
     }
+
+    public function destroy()
+    {
+
+    }
+
 }

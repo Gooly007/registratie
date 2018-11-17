@@ -10,6 +10,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'failed'   => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
+    // 'failed'   => 'Deze combinatie van e-mailadres en wachtwoord is niet geldig.',
+    'failed'   => 'Deze combinatie van inloggen en wachtwoord is niet geldig.',
     'throttle' => 'Te veel mislukte loginpogingen. Probeer het over :seconds seconden nogmaals.',
 ];

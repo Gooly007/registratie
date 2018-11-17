@@ -38,7 +38,7 @@
                             <div class="col-sm-10"><input type="text" name="sedula" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Badge') }}</label>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Badge #') }}</label>
                             <div class="col-sm-10"><input type="text" name="badge" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>

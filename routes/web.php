@@ -17,16 +17,27 @@ Route::get('/', function () {
 });
 */
 
+
+Route::get('/reset', function () {
+    return view('auth/passwords/reset');
+});
+
+
 Auth::routes();
 
-Route::get('/', 'BezoekersController@index')->name('home')->middleware('auth');
+Route::get('/', 'BezoekersController@index')->name('home');
 
 Route::get('/home', 'BezoekersController@index')->name('home')->middleware('auth');
 
-Route::get('/minor', 'HomeController@minor')->name('minor');
-
-Route::get('/bzregister', 'BezoekersController@create')->name('bzregister')->middleware('auth');
-
-Route::get('/bzinfo/$id', 'BezoekersController@info')->name('bzinfo')->middleware('auth');
+Route::get('/bzregister', 'BezoekersController@create')->name('bzregister');
 
 Route::post('/bzcreate', 'BezoekersController@store')->name('bzcreate')->middleware('auth');
+
+Route::get('/home/{id}', 'BezoekersController@show')->name('bzinfo')->middleware('auth');
+
+Route::get('/home/{id}/edit', 'BezoekersController@edit')->middleware('auth');
+
+Route::patch('home/{id}', 'BezoekersController@patch')->middleware('auth');
+
+Route::get('/minor', 'HomeController@minor')->name('minor');
+

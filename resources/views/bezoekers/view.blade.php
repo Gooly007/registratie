@@ -20,8 +20,7 @@
                         </h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="/home/{{ $bezoekers->id }}" method="post" class="form-horizontal">
-                            {{ method_field('PATCH') }}
+                        <form action="/home" method="get" class="form-horizontal">
                         @csrf
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Lastname') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->lastname }}</div>
@@ -36,22 +35,32 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Plate Number') }}</label>
-                            <div class="col-sm-10">
-                                @if ( $bezoekers->platenumber == '')
-                                <input type="text" name="platenumber">
-                                @else
-                                    {{ $bezoekers->platenumber }}
-                                @endif
-                                </div>
+                            <div class="col-sm-10">{{ $bezoekers->platenumber }}</div>
+                        </div><div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason for visit') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->reason }}</div>
+                        </div><div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->person }}</div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Time Out') }}</label>
-                            <div class="col-sm-10"><input type="text" name="timeout" value="{{ Carbon\Carbon::now(-3)->format('H:i') }}"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Particularities') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->particularities }}</div>
+                        </div><div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Badge #') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->badge }}</div>
+                        </div><div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Date') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->date }}</div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Time In') }}</label>
+                            <div class="col-sm-10">{{ $bezoekers->timein }}</div>
                         </div>
                         <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
-                                    <button class="btn btn-primary" type="submit">{{ __('Submit') }}</button>
+                                    <button class="btn btn-primary" type="submit">{{ __('Go Home') }}</button>
                                 </div>
                             </div>
 
