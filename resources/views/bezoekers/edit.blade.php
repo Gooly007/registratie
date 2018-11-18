@@ -23,6 +23,9 @@
                         <form action="/home/{{ $bezoekers->id }}" method="post" class="form-horizontal">
                             {{ method_field('PATCH') }}
                         @csrf
+
+                        @include ('layouts.errors')
+
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Lastname') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->lastname }}</div>
                         </div>
@@ -41,22 +44,42 @@
                                 <input type="text" name="platenumber">
                                 @else
                                     {{ $bezoekers->platenumber }}
+                                    <input type="hidden" name="platenumber" value="{{ $bezoekers->platenumber }}">
                                 @endif
                                 </div>
                         </div>
                         <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason of visit') }}</label>
+                            <div class="col-sm-10">
+                                @if ( $bezoekers->reason == '')
+                                <input type="text" name="reason">
+                                @else
+                                    {{ $bezoekers->reason }}
+                                    <input type="hidden" name="reason" value="{{ $bezoekers->reason }}">
+                                @endif
+                                </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Particularities') }}</label>
+                            <div class="col-sm-10">
+                                @if ( $bezoekers->particularities == '')
+                                <input type="text" name="particularities">
+                                @else
+                                    {{ $bezoekers->particularities }}
+                                    <input type="hidden" name="particularities" value="{{ $bezoekers->particularities }}">
+                                @endif
+                                </div>
+                        </div>
+                        {{-- <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Time Out') }}</label>
                             <div class="col-sm-10"><input type="text" name="timeout" value="{{ Carbon\Carbon::now(-3)->format('H:i') }}"></div>
-                        </div>
+                        </div> --}}
                         <div class="hr-line-dashed"></div>
                             <div class="form-group">
                                 <div class="col-sm-4 col-sm-offset-2">
                                     <button class="btn btn-primary" type="submit">{{ __('Submit') }}</button>
                                 </div>
                             </div>
-
-                        @include ('layouts.errors')
-
                         </form>
                     </div>
                 </div>

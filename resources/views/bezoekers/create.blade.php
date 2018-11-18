@@ -23,6 +23,9 @@
                     <div class="ibox-content">
                         <form action="{{ action('BezoekersController@store') }}" method="post" class="form-horizontal">
                         @csrf
+
+                            @include('layouts.errors')
+
                         <input type="hidden" name="username" value="{{ Auth::user()->username }}">
                         <input type="hidden" name="timein" value="{{ Carbon\Carbon::now(-3)->format('H:i') }}">
                         <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
@@ -51,7 +54,7 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person or Department') }}</label>
-                            <div class="col-sm-10"><input type="text" name="person"></div>
+                            <div class="col-sm-10"><input type="text" name="person" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Particularities') }}</label>
@@ -71,9 +74,6 @@
                                     <button class="btn btn-primary" type="submit">{{ __('Submit') }}</button>
                                 </div>
                             </div>
-
-                        @include ('layouts.errors')
-
                         </form>
                     </div>
                 </div>

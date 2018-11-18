@@ -44,7 +44,7 @@ class BezoekersController extends Controller
         'lastname' => 'required|min:3',
         'firstname' => 'required|min:3',
         'sedula' => 'required|min:10',
-        'badge' => 'required',
+        'badge' => 'required|min:1|max:5',
         'reason' => 'required',
         'person' => 'required',
         'date' => 'required',
@@ -78,9 +78,17 @@ class BezoekersController extends Controller
      * @return response
      *
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
+        // dd(request()->all());
+        $bezoekers = bezoek_registraties::find($id);
+        $bezoekers->platenumber = request('platenumber');
+        $bezoekers->reason = request('reason');
+        $bezoekers->particularities = request('particularities');
 
+        $bezoekers->save();
+
+        return redirect('/home');
     }
 
     public function destroy()
