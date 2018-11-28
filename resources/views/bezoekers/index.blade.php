@@ -6,6 +6,7 @@
 
 @section('header')
     <link href="{{ URL::asset('css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('css/plugins/sweetalert/sweetalert.css') }}" rel="stylesheet">
 @endsection
 
 <!-- Content of page -->
@@ -39,7 +40,7 @@
 
                     <div class="ibox-content">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover dataTables-example">
+                                <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
                                             <th>{{ __('Badge') }}</th>
@@ -47,7 +48,7 @@
                                             <th>{{ __('Lastname') }}</th>
                                             <th>{{ __('Firstname') }}</th>
                                             <th>{{ __('Time In') }}</th>
-                                            <th colspan="2">{{ __('Action') }}</th>
+                                            <th colspan="3">{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
                                         <tbody>
@@ -58,8 +59,9 @@
                                                     <td>{{ $index->lastname }}</td>
                                                     <td>{{ $index->firstname }}</td>
                                                     <td>{{ $index->timein }}</td>
-                                                    <td class=" col-sm-2 "><a href="/home/{{ $index->id }}" class="btn btn-info btn-xs">{{ __('Details') }}</a></td>
-                                                    <td class="col-sm-2"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-xs">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
+                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Time Out') }}</button></td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -80,6 +82,9 @@
 <script src="{{ asset('js/plugins/dataTables/datatables.min.js') }}"></script>
 <script src="{{ asset('js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
 <script src="{{ asset('js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+<!-- Sweet alert -->
+<script src="{{ asset('js/plugins/sweetalert/sweetalert.min.js') }}"></script>
 
 <!-- Page-Level Scripts -->
 <script>
@@ -109,6 +114,31 @@
             });
 
         });
+
+        $('.tijduit').click(function(e) {
+            var bzedit = $(this).attr("bzid");
+            tijduit(bzedit);
+        });
+
+        function tijduit(bzedit) {
+            swal({
+                title: "{{ __('Are you sure?') }}",
+                text: "Tijd uit wordt bewerkt!",
+                type: "warning",
+                showCancelButton: true,
+                cancelButtonText: "Anuleren",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Bewerk!",
+                closeOnConfirm: false
+            }, function () {
+                alert=bzedit
+                // Redirect the User
+                    window.location.href = "/home/" + bzedit + "/tijduit";
+
+                }
+
+            );
+        };
 </script>
 
 @endsection

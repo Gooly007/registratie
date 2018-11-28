@@ -33,6 +33,8 @@
             <!-- Page wrapper -->
             @include('layouts.topnavbar')
 
+            @include('flash-message')
+
             <!-- Main view  -->
             @yield('content')
 
@@ -49,6 +51,11 @@
 
 @section('scripts')
 @show
+
+<!-- Remove flash message after couple of seconds -->
+<script>
+    $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+    </script>
 
 </body>
 </html>

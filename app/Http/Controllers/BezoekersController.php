@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\bezoek_registraties;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class BezoekersController extends Controller
 {
@@ -17,7 +18,8 @@ class BezoekersController extends Controller
     public function index()
     {
         // Get all registrations
-        $bezoekers = bezoek_registraties::all();
+        // $bezoekers = bezoek_registraties::all();
+        $bezoekers = bezoek_registraties::where('timeout', null)->get();
         return view('bezoekers.index', compact('bezoekers'));
 
     }
@@ -54,7 +56,7 @@ class BezoekersController extends Controller
         bezoek_registraties::create(request(['lastname','firstname','sedula','badge','reason',
                 'person','date','timein','username']));
 
-        return redirect('/home');
+        return redirect('/home')->with('success', 'Entry added successfully!');
 
     }
 
@@ -88,7 +90,16 @@ class BezoekersController extends Controller
 
         $bezoekers->save();
 
-        return redirect('/home');
+        return redirect('/home')->with('success', 'Entry updated successfully!');
+    }
+
+    public function tijduit($id)
+    {
+        $bezoekers = bezoek_registraties::find($id);
+        $current = Carbon::now(-3)->format('H:i');
+        $bezoekers->timeout = $current;
+        $bezoekers->save();
+        return redirect('/home')->with('success', 'Bezoeker is verwijderd!');
     }
 
     public function destroy()

@@ -39,5 +39,7 @@ Route::get('/home/{id}/edit', 'BezoekersController@edit')->middleware('auth');
 
 Route::patch('/home/{id}', 'BezoekersController@update')->middleware('auth');
 
+Route::get('/home/{id}/tijduit', 'BezoekersController@tijduit')->middleware('auth');
+
 Route::get('/minor', 'HomeController@minor')->name('minor');
 
