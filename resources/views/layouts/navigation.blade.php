@@ -34,15 +34,31 @@
 
             @if (Auth::user()->isAdmin())
 
+            <li class="{{ isActiveRoute('totallist') }}">
+                <a href="/totallist"><i class="fa fa-archive"></i> <span class="nav-label">{{ __('Total Listing') }}</span> </a>
+            </li>
             <li class="{{ isActiveRoute('reports') }}">
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">{{ __('Reports') }}</span> </a>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">{{ __('Reports') }}</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ isActiveRoute('#') }}">
+                            <a href="#"><span class="nav-label">{{ __('Report 1') }}</span></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ isActiveRoute('#') }}">
+                            <a href="#"><span class="nav-label">{{ __('Report 2') }}</span></a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-second-level collapse">
+                        <li class="{{ isActiveRoute('#') }}">
+                            <a href="#"><span class="nav-label">{{ __('Report 3') }}</span></a>
+                        </li>
+                    </ul>
             </li>
             <li class="{{ isActiveRoute('users') }}">
-                    <a href="#"><i class="fa fa-user-circle-o"></i> <span class="nav-label">{{ __('Users') }}</span> </a>
+                    <a href="/user"><i class="fa fa-user-circle-o"></i> <span class="nav-label">{{ __('Users') }}</span> </a>
             </li>
-            <li class="{{ isActiveRoute('listing') }}">
-                    <a href="#"><i class="fa fa-archive"></i> <span class="nav-label">{{ __('Listing') }}</span> </a>
-            </li>
+
 
             @endif
 

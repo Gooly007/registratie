@@ -53,11 +53,22 @@ class BezoekersController extends Controller
         'timein' => 'required',
         ]);
 
-        bezoek_registraties::create(request(['lastname','firstname','sedula','badge','reason',
-                'person','date','timein','username']));
+        //$bz = bezoek_registraties::where('timeout', NULL)->where('sedula', '1978011001')->pluck('id');
+        $bz = bezoek_registraties::whereNull('timeout')->where('sedula', request(['sedula']))->pluck('id');
+            // Check if array is empty
+            if (!$bz->isEmpty()) {
 
-        return redirect('/home')->with('success', 'Entry added successfully!');
+                // is not empty
+                return redirect('/home')->with('error', 'Bezoeker is al geregistreerd! Je nieuw registratie is niet voltooid.');
 
+            } else {
+
+               // echo 'is empty';
+               bezoek_registraties::create(request(['lastname','firstname','sedula','badge','reason',
+               'person','date','timein','username']));
+               return redirect('/home')->with('success', 'Entry added successfully!');
+
+            }
     }
 
     public function show($id)
