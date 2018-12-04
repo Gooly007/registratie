@@ -59,7 +59,7 @@
                                                     <td>{{ $index->email }}</td>
                                                     <td>{{ $index->role }}</td>
                                                     <td>{{ $index->password }}</td>
-                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><button class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</button></td>
                                                     <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Delete') }}</button></td>
                                                 </tr>
                                             @endforeach
