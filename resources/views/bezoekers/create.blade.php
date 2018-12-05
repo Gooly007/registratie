@@ -30,35 +30,35 @@
                         <input type="hidden" name="timein" value="{{ Carbon\Carbon::now(-3)->format('H:i') }}">
                         <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Lastname') }}</label>
-                            <div class="col-sm-10"><input type="text" name="lastname" required></div>
+                            <div class="col-sm-10"><input type="text" name="lastname" value="{{ old('lastname') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Firstname') }}</label>
-                            <div class="col-sm-10"><input type="text" name="firstname" required></div>
+                            <div class="col-sm-10"><input type="text" name="firstname" value="{{ old('firstname') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('ID') }}</label>
-                            <div class="col-sm-10"><input type="text" name="sedula" required></div>
+                            <div class="col-sm-10"><input type="text" name="sedula" value="{{ old('sedula') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Badge #') }}</label>
-                            <div class="col-sm-10"><input type="text" name="badge" required></div>
+                            <div class="col-sm-10"><input type="text" name="badge" value="{{ old('badge') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Plate Number') }}</label>
-                            <div class="col-sm-10"><input type="text" name="platenumber"></div>
+                            <div class="col-sm-10"><input type="text" name="platenumber" value="{{ old('platenumber') }}"></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason for visit') }}</label>
-                            <div class="col-sm-10"><input type="text" name="reason" required></div>
+                            <div class="col-sm-10"><input type="text" name="reason" value="{{ old('reason') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person or Department') }}</label>
-                            <div class="col-sm-10"><input type="text" name="person" required></div>
+                            <div class="col-sm-10"><input type="text" name="person" value="{{ old('person') }}" required></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Particularities') }}</label>
-                            <div class="col-sm-10"><input type="text" name="particularities"></div>
+                            <div class="col-sm-10"><input type="text" name="particularities" value="{{ old('particularities') }}"></div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Date') }}</label>

@@ -59,7 +59,8 @@ class BezoekersController extends Controller
             if (!$bz->isEmpty()) {
 
                 // is not empty
-                return redirect('/home')->with('error', 'Bezoeker is al geregistreerd! Je nieuw registratie is niet voltooid.');
+                return redirect('bzregister')->withInput()->with('error', 'Bezoeker is al geregistreerd! Je nieuw registratie is niet voltooid.');
+                //return redirect('/home')->with('error', 'Bezoeker is al geregistreerd! Je nieuw registratie is niet voltooid.');
 
             } else {
 
