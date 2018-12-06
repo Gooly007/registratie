@@ -59,8 +59,11 @@
                     <a href="/user"><i class="fa fa-user-circle-o"></i> <span class="nav-label">{{ __('Users') }}</span> </a>
             </li>
 
-
             @endif
+
+            <li class="{{ isActiveRoute('help') }}">
+                    <a href="{{ url('/help') }}"><i class="fa fa-life-ring"></i> <span class="nav-label">{{ __('help') }}</span></a>
+                </li>
 
         </ul>
 

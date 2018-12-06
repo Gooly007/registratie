@@ -22,6 +22,9 @@ Route::get('/reset', function () {
     return view('auth/passwords/reset');
 });
 
+Route::get('/help', function () {
+    return view('help');
+});
 
 Auth::routes();
 
