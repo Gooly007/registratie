@@ -97,8 +97,8 @@
                                             Als je op "Bewerk" clickt, wordt je terug gestuurd naar Overzicht pagina en de registratie van de bezoeker zal niet meer
                                             in lijst voorkomen.
                                         </p>
-                                        <p>< Plaatje 1 ><img src="images/tijduit.jpg"></p>
-                                        <p>< Plaatje 2 ><img src="images/tijduit1.jpg"></p>
+                                        <p>< Plaatje 1 ><br><img src="images/tijduit.jpg"></p>
+                                        <p>< Plaatje 2 ><br><img src="images/tijduit1.jpg"></p>
                                     </div>
                                 </div>
 
