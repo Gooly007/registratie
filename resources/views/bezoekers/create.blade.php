@@ -30,7 +30,7 @@
                         <input type="hidden" name="timein" value="{{ Carbon\Carbon::now(-3)->format('H:i') }}">
                         <input type="hidden" name="date" value="{{ date('Y-m-d') }}">
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Lastname') }}</label>
-                            <div class="col-sm-10"><input type="text" name="lastname" value="{{ old('lastname') }}" required></div>
+                            <div class="col-sm-10"><input type="text" name="lastname" value="{{ old('lastname') }}" required> </div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Firstname') }}</label>
