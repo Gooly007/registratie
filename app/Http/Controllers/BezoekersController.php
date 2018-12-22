@@ -39,7 +39,7 @@ class BezoekersController extends Controller
     public function store(Request $request)
     {
        // $lastname = $request->input('lastname');
-        // dd(request()->all());
+         //dd(request()->all());
 
         // Validate Form
          $this->validate(request(), [
@@ -65,8 +65,8 @@ class BezoekersController extends Controller
             } else {
 
                // echo 'is empty';
-               bezoek_registraties::create(request(['lastname','firstname','sedula','badge','reason',
-               'person','date','timein','username']));
+               bezoek_registraties::create(request(['lastname','firstname','sedula','badge','platenumber','reason',
+               'person','particularities','propertyaccess','date','timein','username']));
                return redirect('/home')->with('success', 'Entry added successfully!');
 
             }
@@ -99,6 +99,7 @@ class BezoekersController extends Controller
         $bezoekers->platenumber = request('platenumber');
         $bezoekers->reason = request('reason');
         $bezoekers->particularities = request('particularities');
+        $bezoekers->propertyaccess = request('propertyaccess');
 
         $bezoekers->save();
 

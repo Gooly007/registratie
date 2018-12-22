@@ -23,6 +23,7 @@ class CreateBezoekRegistratiesTable extends Migration
             $table->string('person',25)->nullable();
             $table->string('particularities',50)->nullable();
             $table->string('badge',5);
+            $table->string('propertyaccess',2)->nullable();
             $table->date('date');
             $table->string('timein');
             $table->string('timeout')->nullable();

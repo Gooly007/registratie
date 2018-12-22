@@ -61,6 +61,10 @@
                             <div class="col-sm-10"><input type="text" name="particularities" value="{{ old('particularities') }}"></div>
                         </div>
                         <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Property access') }}</label>
+                            <div class="col-sm-10"><input type="checkbox" name="propertyaccess" value="1"></div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Date') }}</label>
                             <div class="col-sm-10"><p class="form-control-static">{{ date('d-m-Y') }}</p></div>
                         </div>

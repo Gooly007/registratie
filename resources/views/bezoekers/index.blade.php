@@ -40,7 +40,7 @@
 
                     <div class="ibox-content">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table class="table table-striped table-bordered table-hover table-sm">
                                     <thead>
                                         <tr>
                                             <th>{{ __('Badge') }}</th>
@@ -48,21 +48,39 @@
                                             <th>{{ __('Lastname') }}</th>
                                             <th>{{ __('Firstname') }}</th>
                                             <th>{{ __('Time In') }}</th>
+                                            <th>{{ __('Property access') }}</th>
                                             <th colspan="3">{{ __('Action') }}</th>
                                         </tr>
                                     </thead>
                                         <tbody>
                                             @foreach ($bezoekers as $index)
-                                                <tr>
+
+                                                    @if ($index->propertyaccess > 0)
+                                                    <tr class="text-danger">
+                                                    <td class="text-danger">{{ $index->badge }}</td>
+                                                    <td class="text-danger">{{ $index->sedula }}</td>
+                                                    <td class="text-danger">{{ $index->lastname }}</td>
+                                                    <td class="text-danger">{{ $index->firstname }}</td>
+                                                    <td class="text-danger">{{ $index->timein }}</td>
+                                                    <td class="text-danger col-sm-1">Ja</td>
+                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
+                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Time Out') }}</button></td>
+                                                    </tr>
+                                                    @else
+                                                    <tr>
                                                     <td>{{ $index->badge }}</td>
                                                     <td>{{ $index->sedula }}</td>
                                                     <td>{{ $index->lastname }}</td>
                                                     <td>{{ $index->firstname }}</td>
                                                     <td>{{ $index->timein }}</td>
+                                                    <td class="col-sm-1">Nee</td>
                                                     <td class="col-sm-1"><a href="/home/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
                                                     <td class="col-sm-1"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
                                                     <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Time Out') }}</button></td>
-                                                </tr>
+                                                    </tr>
+                                                    @endif
+
                                             @endforeach
                                         </tbody>
                                 </table>

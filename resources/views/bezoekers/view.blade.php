@@ -16,7 +16,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>{{ __('Overview') }} - &nbsp;
-                            <small>{{ __('Edit selected visitor') }}</small>
+                            <small>{{ __('Visitor details') }}</small>
                         </h5>
                     </div>
                     <div class="ibox-content">
@@ -40,7 +40,7 @@
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason for visit') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->reason }}</div>
                         </div><div class="hr-line-dashed"></div>
-                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person') }}</label>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person or Department') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->person }}</div>
                         </div>
                         <div class="hr-line-dashed"></div>
@@ -49,6 +49,15 @@
                         </div><div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Badge #') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->badge }}</div>
+                        </div><div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Property access') }}</label>
+                            <div class="col-sm-10">
+                                @if ($bezoekers->propertyaccess > 0)
+                                        Ja
+                                        @else
+                                        Nee
+                                        @endif
+                                    </div>
                         </div><div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Date') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->date }}</div>

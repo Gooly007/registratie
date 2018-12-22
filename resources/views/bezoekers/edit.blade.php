@@ -49,7 +49,7 @@
                                 </div>
                         </div>
                         <div class="hr-line-dashed"></div>
-                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason of visit') }}</label>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason for visit') }}</label>
                             <div class="col-sm-10">
                                 @if ( $bezoekers->reason == '')
                                 <input type="text" name="reason">
@@ -67,6 +67,17 @@
                                 @else
                                     {{ $bezoekers->particularities }}
                                     <input type="hidden" name="particularities" value="{{ $bezoekers->particularities }}">
+                                @endif
+                                </div>
+                        </div>
+                        <div class="hr-line-dashed"></div>
+                        <div class="form-group"><label class="col-sm-2 control-label">{{ __('Property access') }}</label>
+                            <div class="col-sm-10">
+                                @if ( $bezoekers->propertyaccess > 0)
+                                Ja
+                                @else
+                                    {{ $bezoekers->particularities }}
+                                    <div class="col-sm-10"><input type="checkbox" name="propertyaccess" value="1"></div>
                                 @endif
                                 </div>
                         </div>

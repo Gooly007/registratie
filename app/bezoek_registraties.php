@@ -16,6 +16,7 @@ class bezoek_registraties extends Model
                             'person',
                             'particularities',
                             'badge',
+                            'propertyaccess',
                             'date',
                             'timein',
                             'timeout',
