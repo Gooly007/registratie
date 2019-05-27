@@ -35,7 +35,7 @@
             @if (Auth::user()->isAdmin())
 
             <li class="{{ isActiveRoute('totallist') }}">
-                <a href="/totallist"><i class="fa fa-archive"></i> <span class="nav-label">{{ __('Total Listing') }}</span> </a>
+                <a href="{{ url('/totallist') }}"><i class="fa fa-archive"></i> <span class="nav-label">{{ __('Total Listing') }}</span> </a>
             </li>
             <li class="{{ isActiveRoute('reports') }}">
                     <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">{{ __('Reports') }}</span><span class="fa arrow"></span></a>
