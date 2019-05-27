@@ -63,8 +63,8 @@
                                                     <td class="text-danger">{{ $index->firstname }}</td>
                                                     <td class="text-danger">{{ $index->timein }}</td>
                                                     <td class="text-danger col-sm-1">Ja</td>
-                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
-                                                    <td class="col-sm-1"><a href="/home/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><a href="{{ url('/home/') }}/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
+                                                    <td class="col-sm-1"><a href="{{ url('/home/') }}/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
                                                     <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Time Out') }}</button></td>
                                                     </tr>
                                                     @else
@@ -75,8 +75,8 @@
                                                     <td>{{ $index->firstname }}</td>
                                                     <td>{{ $index->timein }}</td>
                                                     <td class="col-sm-1">Nee</td>
-                                                    <td class="col-sm-1"><a href="{{ url('/home/$index->id') }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
-                                                    <td class="col-sm-1"><a href="{{ url('/home/$index->id/edit') }}" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
+                                                    <td class="col-sm-1"><a href="{{ url('/home/') }}/{{ $index->id }}" class="btn btn-info btn-sm">{{ __('Details') }}</a></td>
+                                                    <td class="col-sm-1"><a href="{{ url('/home/') }}/{{ $index->id }}/edit" class="btn btn-warning btn-sm b4-cen">{{ __('Edit') }}</a></td>
                                                     <td class="col-sm-1"><button type="button" class="btn btn-success btn-sm tijduit" bzid="{{ $index->id }}">{{ __('Time Out') }}</button></td>
                                                     </tr>
                                                     @endif
