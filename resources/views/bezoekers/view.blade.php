@@ -20,7 +20,7 @@
                         </h5>
                     </div>
                     <div class="ibox-content">
-                        <form action="/home" method="get" class="form-horizontal">
+                        <form action="{{ url('/home') }}" method="get" class="form-horizontal">
                         @csrf
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Lastname') }}</label>
                             <div class="col-sm-10">{{ $bezoekers->lastname }}</div>
