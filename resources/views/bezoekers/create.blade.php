@@ -50,7 +50,9 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Reason for visit') }}</label>
-                            <div class="col-sm-10"><input type="text" name="reason" value="{{ old('reason') }}" required></div>
+                            <div class="col-sm-10"><textarea rows="5" id="reason" name="reason" value="{{ old('reason') }}" required>
+                            </textarea>
+                            </div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Person or Department') }}</label>
@@ -58,7 +60,9 @@
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Particularities') }}</label>
-                            <div class="col-sm-10"><input type="text" name="particularities" value="{{ old('particularities') }}"></div>
+                            <div class="col-sm-10"><textarea rows="5" id="particularities" name="particularities" value="{{ old('particularities') }}">
+                            </textarea>
+                            </div>
                         </div>
                         <div class="hr-line-dashed"></div>
                         <div class="form-group"><label class="col-sm-2 control-label">{{ __('Property access') }}</label>
