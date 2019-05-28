@@ -17,7 +17,7 @@
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
                         <h5>{{ __('Overview') }} - &nbsp;
-                            <small>{{ __('Active registrations') }}</small>
+                            <small>{{ __('Attendance List') }}</small>
                         </h5>
                         <div class="ibox-tools">
                                 <a class="collapse-link">

@@ -26,7 +26,7 @@
                 </div>
             </li>
             <li class="{{ isActiveRoute('home') }}">
-                <a href="{{ url('/home') }}"><i class="fa fa-th-large"></i> <span class="nav-label">{{ __('Overview') }}</span></a>
+                <a href="{{ url('/home') }}"><i class="fa fa-th-large"></i> <span class="nav-label">{{ __('Attendance List') }}</span></a>
             </li>
             <li class="{{ isActiveRoute('bzregister') }}">
                 <a href="{{ url('/bzregister') }}"><i class="fa fa-address-book-o"></i> <span class="nav-label">{{ __('Register') }}</span></a>
