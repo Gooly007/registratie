@@ -56,7 +56,7 @@
                     </ul>
             </li>
             <li class="{{ isActiveRoute('users') }}">
-                    <a href="/user"><i class="fa fa-user-circle-o"></i> <span class="nav-label">{{ __('Users') }}</span> </a>
+                    <a href="{{ url('/user') }}"><i class="fa fa-user-circle-o"></i> <span class="nav-label">{{ __('Users') }}</span> </a>
             </li>
 
             @endif
